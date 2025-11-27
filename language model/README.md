@@ -2,9 +2,9 @@
 
 This guide provides instructions for reproducing the GPT-2 language modeling experiments as presented in our paper. We provide implementations with Derf (our proposed function), DyT, and LayerNorm. Follow the steps below to set up the environment, train the model, and evaluate the results.
 
-## 1. Clone the Caduceus Repository
+## 1. Clone the nanoGPT Repository
 
-Clone the GPT2 repository from GitHub:
+Clone the nanoGPT repository from GitHub:
 
 ```bash
 git clone git@github.com:karpathy/nanoGPT.git
