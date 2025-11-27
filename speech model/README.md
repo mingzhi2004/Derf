@@ -29,7 +29,10 @@ Copy the configuration file for wav2vec 2.0 Large with LibriSpeech:
 cp wav2vec2_large_librispeech.yaml ./fairseq/examples/wav2vec/config/pretraining/
 ```
 
-## 3. Implement Derf
+## 3. Dataset Preparation
+Follow the instructions in the original [wav2vec 2.0 README](https://github.com/facebookresearch/fairseq/blob/main/examples/wav2vec/README.md) to download and prepare the LibriSpeech datasets.
+
+## 4. Implement Derf
 
 To reproduce the results using Dynamic erf (Derf), apply the following patch:
 ```
@@ -40,8 +43,8 @@ git apply dynamic_erf.patch
 
 In the patch, we also provide implementations of LayerNorm and DyT. You can easily switch between them by simply commenting and uncommenting the relevant code.
 
-## 4. Training & Evaluation
-To train and evaluate the ViT models on the LibriSpeech dataset, run the following commands:
+## 5. Training & Evaluation
+To train and evaluate the wav2vec 2.0 models on the LibriSpeech dataset, run the following commands:
 
 ### wav2vec 2.0 Base
 

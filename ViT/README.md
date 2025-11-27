@@ -2,7 +2,7 @@
 
 This guide provides instructions for reproducing the Vision Transformer (ViT) experiments as presented in our paper. We provide implementations with Derf (our proposed function), DyT, LayerNorm, and other point-wise functions. Follow the steps below to set up the environment, train the model, and evaluate the results.
 
-## Installation
+## 1. Installation
 Set up the Python environment with the following commands:
 ```
 conda create -n ViT python=3.12
@@ -11,7 +11,7 @@ conda install pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 pytorch-cuda=
 pip install timm==1.0.15 tensorboard
 ```
 
-## Training & Evaluation
+## 2. Training & Evaluation
 To train and evaluate the ViT models on ImageNet-1K, run the following commands:
 
 ### ViT-Base

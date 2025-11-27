@@ -2,7 +2,7 @@
 
 This guide provides instructions for reproducing the Diffusion Transformer (DiT) experiments as presented in our paper. We provide implementations with Derf (our proposed function), DyT, LayerNorm, and other point-wise functions. Follow the steps below to set up the environment, train the model, and evaluate the results.
 
-## Installation
+## 1. Installation
 Set up the Python environment with the following commands:
 ```
 conda create -n DiT python=3.12
@@ -11,7 +11,7 @@ conda install pytorch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 pytorch-cuda=
 pip install timm==1.0.15 diffusers==0.32.2 accelerate==1.4.0
 ```
 
-## Training
+## 2. Training
 To train the DiT models on ImageNet-1K, run the following command:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 train.py \
@@ -26,7 +26,7 @@ torchrun --nnodes=1 --nproc_per_node=8 train.py \
 - Repace `$LEARNING_RATE` with one of the following options: `1e-4`, `2e-4`, or `4e-4`.
 - Replace `$NORMTYPE` to choose which point-wise function or normalization layer to use. Available options include: `derf` (our proposed function), `dyt` or `layernorm` (DyT or LayerNorm as baselines), `isru`, `expsign`, etc. (other point-wise functions).
 
-## Evaluation
+## 3. Evaluation
 The evaluation pipeline consists of two stages: sampling images from the trained model and computing the FID score.
 
 ### Sampling
