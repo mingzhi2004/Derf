@@ -5,8 +5,7 @@ This repository provides a modular PyTorch implementation of **Dynamic erf (Derf
 --- 
 
 <p align="center">
-<img src="figure/teaser.svg" width="100%" style="max-height: 450px; object-fit: contain;" 
-class="center">
+<img src="figure/teaser.svg" width="60%">
 </p>
 
 **Dynamic erf (Derf)** is a simple point-wise function: $\mathrm{Derf}(x) = \mathrm{erf}(\alpha x + s)$, where **α** and **s** are learnable scalars.  
