@@ -1,6 +1,6 @@
-# DNA Model (Caduceus/Hyena) with Derf
+# DNA Model (Caduceus/Hyena)
 
-This guide provides instructions for reproducing the genomic sequence modeling experiments with Derf as presented in our paper. Follow the steps below to set up the environment, train the model, and evaluate the results.
+This guide provides instructions for reproducing the genomic sequence modeling experiments as presented in our paper. We provide implementations with Derf (our proposed function), DyT, and LayerNorm. Follow the steps below to set up the environment, train the model, and evaluate the results.
 
 ## Installation
 

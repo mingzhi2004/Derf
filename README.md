@@ -1,11 +1,11 @@
-# Transformers without Normalization
+# Stronger Normalization-Free Transformers
 
 This repository provides a modular PyTorch implementation of **Dynamic erf (Derf)**
 
 --- 
 
 <p align="center">
-<img src="figure/teaser.svg" width=100% height=100% 
+<img src="figure/teaser.svg" width=100% height=60% 
 class="center">
 </p>
 
@@ -13,7 +13,7 @@ class="center">
 Derf is designed as a drop-in replacement for normalization layers in Transformers, and achieves stronger performance than LayerNorm, RMSNorm, and Dynamic Tanh across a wide range of modalities, tasks, and learning paradigms.
 
 ## Implementation
-We evaluate Derf across four **representative Transformer model families** and one other modern architectures, strictly **following their official implementations**:
+We evaluate Derf across four **representative Transformer model families** and one other modern architecture, strictly **following their official implementations**. 
 
 - **[DiT](DiT/)** - Diffusion Transformer for image generation
 - **[ViT](ViT/)** - Vision Transformer for image classification
@@ -22,6 +22,8 @@ We evaluate Derf across four **representative Transformer model families** and o
 - **[Language Model](language%20model/)** - Transformer-based language models
 
 For detailed installation, implementation details, and usage instructions, please refer to the README in each model's directory.
+
+In addition to Derf, we also provide implementations of other point-wise functions mentioned in our paper, such as $\mathrm{satursin}(x)$, $\mathrm{isru}(x)$, $\mathrm{expsign}(x)$, and $\arctan(x)$.
 
 ## Results
 
@@ -72,6 +74,7 @@ This work builds upon several excellent open-source projects. We are grateful to
 - **Speech Model implementation** is based on [fairseq](https://github.com/facebookresearch/fairseq)
 - **DNA Model implementation** is based on [Caduceus](https://github.com/kuleshov-group/caduceus)
 - **Language Model implementation** is based on [nanoGPT](https://github.com/karpathy/nanoGPT)
+- We compare our method with **[DyT (Dynamic Tanh)](https://github.com/jiachenzhu/DyT)** as one of our baselines
 
 
 ## License
