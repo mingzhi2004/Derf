@@ -12,8 +12,9 @@ pip install timm==1.0.15 tensorboard
 ```
 
 ## Training & Evaluation
-To train and evaluate the ViT models on ImageNet-1K, run the following commands
-ViT-B
+To train and evaluate the ViT models on ImageNet-1K, run the following commands:
+
+### ViT-Base
 ```
 torchrun --nnodes=4 --nproc_per_node=8 main.py \
     --model vit_base_patch16_224 \
@@ -27,7 +28,7 @@ torchrun --nnodes=4 --nproc_per_node=8 main.py \
 ```
 
 
-ViT-L
+### ViT-Large
 ```
 torchrun --nnodes=8 --nproc_per_node=8 main.py \
     --model vit_large_patch16_224 \

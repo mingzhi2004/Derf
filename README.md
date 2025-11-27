@@ -5,7 +5,7 @@ This repository provides a modular PyTorch implementation of **Dynamic erf (Derf
 --- 
 
 <p align="center">
-<img src="figure/teaser.svg" width=100% height=60% 
+<img src="figure/teaser.svg" width="100%" style="max-height: 450px; object-fit: contain;" 
 class="center">
 </p>
 

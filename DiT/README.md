@@ -12,7 +12,7 @@ pip install timm==1.0.15 diffusers==0.32.2 accelerate==1.4.0
 ```
 
 ## Training
-To train the DiT models on ImageNet-1K, run the following commands
+To train the DiT models on ImageNet-1K, run the following command:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 train.py \
     --model $MODEL \
