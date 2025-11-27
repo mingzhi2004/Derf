@@ -3,7 +3,15 @@
 This guide provides instructions for reproducing the wav2vec 2.0 speech recognition experiments as presented in our paper. We provide implementations with Derf (our proposed function), DyT, and LayerNorm. Follow the steps below to set up the environment, train the model, and evaluate the results.
 
 
-## Installation
+## 1. Clone the fairseq Repository
+
+Clone the official fairseq repository from GitHub:
+```
+git clone https://github.com/facebookresearch/fairseq.git
+```
+
+## 2. Installation
+
 Set up the Python environment with the following commands:
 ```
 conda create -n w2v python=3.10
@@ -15,7 +23,24 @@ cd fairseq
 pip install --editable ./
 ```
 
-## Training & Evaluation
+*(Fairseq does not provide a config for wav2vec 2.0 Large with LibriSpeech. We created our own by following the instructions from the original paper.)*
+Copy the configuration file for wav2vec 2.0 Large with LibriSpeech:
+```
+cp wav2vec2_large_librispeech.yaml ./fairseq/examples/wav2vec/config/pretraining/
+```
+
+## 3. Implement Derf
+
+To reproduce the results using Dynamic erf (Derf), apply the following patch:
+```
+cp dynamic_erf.patch fairseq
+cd fairseq
+git apply dynamic_erf.patch
+```
+
+In the patch, we also provide implementations of LayerNorm and DyT. You can easily switch between them by simply commenting and uncommenting the relevant code.
+
+## 4. Training & Evaluation
 To train and evaluate the ViT models on the LibriSpeech dataset, run the following commands:
 
 ### wav2vec 2.0 Base
@@ -24,8 +49,7 @@ To train and evaluate the ViT models on the LibriSpeech dataset, run the followi
 torchrun --nnodes=8 --nproc_per_node=8 fairseq-hydra-train \
     task.data=/path/to/manifest \
     --config-dir ./examples/wav2vec/config/pretraining \
-    --config-name wav2vec2_base_librispeech \
-    --normtype $NORMTYPE
+    --config-name wav2vec2_base_librispeech
 ```
 
 ### wav2vec 2.0 Large
@@ -34,10 +58,7 @@ torchrun --nnodes=8 --nproc_per_node=8 fairseq-hydra-train \
 torchrun --nnodes=16 --nproc_per_node=8 fairseq-hydra-train \
     task.data=/path/to/manifest \
     --config-dir ./examples/wav2vec/config/pretraining \
-    --config-name wav2vec2_large_librispeech \
-    --normtype $NORMTYPE
+    --config-name wav2vec2_large_librispeech
 ```
-
-- Replace `$NORMTYPE` to choose which point-wise function or normalization layer to use. Available options include: `derf` (our proposed function), `dyt` or `layernorm` (DyT or LayerNorm as baselines).
 
 - For further details about wav2vec 2.0, see the [original repository](https://github.com/facebookresearch/fairseq/blob/main/examples/wav2vec/README.md).
