@@ -21,7 +21,7 @@ conda activate caduceus_env
 
 ## 3. Dataset Preparation
 
-Follow the instructions in the original [Caduceus README](https://github.com/kuleshov-group/caduceus/blob/main/README.md) to download and prepare the necessary datasets for DNA sequence modeling
+Follow the instructions in the original [Caduceus README](https://github.com/kuleshov-group/caduceus/blob/main/README.md) to download and prepare the necessary datasets for DNA sequence modeling.
 
 ## 4. Implement Derf
 

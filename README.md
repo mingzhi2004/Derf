@@ -73,7 +73,7 @@ This work builds upon several excellent open-source projects. We are grateful to
 - **Speech Model implementation** is based on [fairseq](https://github.com/facebookresearch/fairseq)
 - **DNA Model implementation** is based on [Caduceus](https://github.com/kuleshov-group/caduceus)
 - **Language Model implementation** is based on [nanoGPT](https://github.com/karpathy/nanoGPT)
-- We compare our method with **[DyT (Dynamic Tanh)](https://github.com/jiachenzhu/DyT)** as one of our baselines
+- We compare our method with [DyT (Dynamic Tanh)](https://github.com/jiachenzhu/DyT) as one of our baselines
 
 
 ## License
